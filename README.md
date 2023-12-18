@@ -1,5 +1,5 @@
 <div align="center">
-<img alt="Curso de Svelte js desde cero y con proyectos" src="assets/svelte.svg" width="500" />
+<img alt="Curso de Svelte js desde cero y con proyectos" src="assets/svelte.svg" width="200" />
 
 # Aprendiendo Svelte
 
