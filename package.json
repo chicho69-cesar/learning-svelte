@@ -1,0 +1,34 @@
+{
+  "name": "svelte-course",
+  "version": "1.0.0",
+  "description": "Learning Svelte by creating real world projects",
+  "private": "true",
+  "workspaces": [
+    "projects/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "sui-mono commit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chicho69-cesar/learning-svelte.git"
+  },
+  "keywords": [
+    "Svelte",
+    "Sveltekit",
+    "Vite",
+    "JavaScript",
+    "TypeScript",
+    "TailwindCSS"
+  ],
+  "author": "Cesar Villalobos Olmos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chicho69-cesar/learning-svelte/issues"
+  },
+  "homepage": "https://github.com/chicho69-cesar/learning-svelte#readme",
+  "dependencies": {
+    "@s-ui/mono": "2.42.0"
+  }
+}
