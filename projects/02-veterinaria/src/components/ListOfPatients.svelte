@@ -1,5 +1,5 @@
 <script>
-  import { dateFormatter } from '../lib/intl-formatters'
+  import Patient from './Patient.svelte'
 
   export let patients = []
   export let onSelectPatient
@@ -9,49 +9,17 @@
 <div class='w-full mt-8'>
   <!-- Estructura de repetición o ciclo en svelte -->
   {#each patients as patient}
-    <article class='w-full px-4 py-2 mb-4 bg-white rounded-md shadow'>
-      <p class='mb-1 font-bold'>
-        Id: <span class='font-normal'>{patient.id}</span>
-      </p>
-
-      <p class='mb-1 font-bold'>
-        Nombre: <span class='font-normal'>{patient.name}</span>
-      </p>
-
-      <p class='mb-1 font-bold'>
-        Propietario: <span class='font-normal'>{patient.property}</span>
-      </p>
-
-      <p class='mb-1 font-bold'>
-        Email: <span class='font-normal'>{patient.email}</span>
-      </p>
-
-      <p class='mb-1 font-bold'>
-        Fecha de alta: <span class='font-normal'
-          >{dateFormatter.format(patient.date)}</span
-        >
-      </p>
-
-      <p class='mb-1 font-bold'>
-        Síntomas: <span class='font-normal'>{patient.symptoms}</span>
-      </p>
-
-      <div class='flex items-center justify-between w-full gap-4 mt-4'>
-        <button
-          on:click={() => onSelectPatient(patient)}
-          class='w-full py-1 font-bold text-white bg-indigo-700 rounded shadow-sm'
-        >
-          Editar
-        </button>
-
-        <button
-          on:click={() => onDeletePatient(patient.id)}
-          class='w-full py-1 font-bold text-white bg-red-600 rounded shadow-sm'
-        >
-          Eliminar
-        </button>
-      </div>
-    </article>
+    <!-- En svelte podemos crear eventos personalizados en los componentes
+    y mandarlos a ejecutar en los componentes que los utilizan.
+    En este caso mandamos a llamar dos eventos del componente Patient, los 
+    cuales son edit y delete, a traves de los cuales recibimos la variable que 
+    mandamos en el evento en la propiedad detail, donde en el primero
+    recibimos el patient completo y el segundo recibimos solo el id. -->
+    <Patient
+      {patient}
+      on:edit={({ detail: p }) => onSelectPatient(p)}
+      on:delete={({ detail: id }) => onDeletePatient(id)}
+    />
   {:else}
     <h2 class='text-xl font-semibold text-center'>No Hay Pacientes</h2>
   {/each}
