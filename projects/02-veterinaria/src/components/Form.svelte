@@ -8,6 +8,7 @@
   let error = false
   let success = false
 
+  /* Definimos las props de nuestros componentes */
   export let initialValues
   export let isEditing = false
   export let onAddPatient
@@ -52,9 +53,11 @@
   <Alert message='Paciente almacenado correctamente' type='success' />
 {/if}
 
+<!-- Podemos ejecutar acciones referentes al estado después del pipe | en
+el evento. -->
 <form
   on:submit|preventDefault={handleSubmit}
-  class='my-8 bg-white p-4 rounded-md shadow-lg'
+  class='p-4 my-8 bg-white rounded-md shadow-lg'
 >
   <Input
     id='name'
@@ -96,8 +99,9 @@
   />
 
   <button
-    class='w-full bg-indigo-700 py-1 rounded-md text-white font-bold text-lg shadow'
+    class='w-full py-1 text-lg font-bold text-white bg-indigo-700 rounded-md shadow'
   >
+    <!-- Estructura condicional if en svelte -->
     {#if isEditing}
       Editar paciente
     {:else}
