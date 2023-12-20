@@ -1,0 +1,88 @@
+{
+  "guitars": [
+    {
+      "id": 1,
+      "model": "Vai",
+      "description": "Morbi ornane augue nis!, vel elementum dui mollis vel. Curobitur non ex id eros fermentum hendrerit.",
+      "price": 299,
+      "img": "guitarra_01.png"
+    },
+    {
+      "id": 2,
+      "model": "Clapton",
+      "description": "Morbi ornane augue nis!, vel elementum dui mollis vel. Curobitur non ex id eros fermentum hendrerit.",
+      "price": 389,
+      "img": "guitarra_02.png"
+    },
+    {
+      "id": 3,
+      "model": "Page",
+      "description": "Morbi ornane augue nis!, vel elementum dui mollis vel. Curobitur non ex id eros fermentum hendrerit.",
+      "price": 329,
+      "img": "guitarra_03.png"
+    },
+    {
+      "id": 4,
+      "model": "Beck",
+      "description": "Morbi ornane augue nis!, vel elementum dui mollis vel. Curobitur non ex id eros fermentum hendrerit.",
+      "price": 399,
+      "img": "guitarra_04.png"
+    },
+    {
+      "id": 5,
+      "model": "Townshend",
+      "description": "Morbi ornane augue nis!, vel elementum dui mollis vel. Curobitur non ex id eros fermentum hendrerit.",
+      "price": 259,
+      "img": "guitarra_05.png"
+    },
+    {
+      "id": 6,
+      "model": "Morello",
+      "description": "Morbi ornane augue nis!, vel elementum dui mollis vel. Curobitur non ex id eros fermentum hendrerit.",
+      "price": 379,
+      "img": "guitarra_06.png"
+    },
+    {
+      "id": 7,
+      "model": "Borland",
+      "description": "Morbi ornane augue nis!, vel elementum dui mollis vel. Curobitur non ex id eros fermentum hendrerit.",
+      "price": 349,
+      "img": "guitarra_07.png"
+    },
+    {
+      "id": 8,
+      "model": "Cobain",
+      "description": "Morbi ornane augue nis!, vel elementum dui mollis vel. Curobitur non ex id eros fermentum hendrerit.",
+      "price": 299,
+      "img": "guitarra_08.png"
+    },
+    {
+      "id": 9,
+      "model": "Dale",
+      "description": "Morbi ornane augue nis!, vel elementum dui mollis vel. Curobitur non ex id eros fermentum hendrerit.",
+      "price": 399,
+      "img": "guitarra_09.png"
+    },
+    {
+      "id": 10,
+      "model": "Young",
+      "description": "Morbi ornane augue nis!, vel elementum dui mollis vel. Curobitur non ex id eros fermentum hendrerit.",
+      "price": 399,
+      "img": "guitarra_10.png"
+    },
+    {
+      "id": 11,
+      "model": "Keith",
+      "description": "Morbi ornane augue nis!, vel elementum dui mollis vel. Curobitur non ex id eros fermentum hendrerit.",
+      "price": 289,
+      "img": "guitarra_11.png"
+    },
+    {
+      "id": 12,
+      "model": "Blackmore",
+      "description": "Morbi ornane augue nis!, vel elementum dui mollis vel. Curobitur non ex id eros fermentum hendrerit.",
+      "price": 349,
+      "img": "guitarra_12.png"
+    }
+  ]
+}
