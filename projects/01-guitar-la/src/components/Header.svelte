@@ -5,13 +5,18 @@
   import BackgroundHeader from './BackgroundHeader.svelte'
   import Cart from './Cart.svelte'
 
+  /* Definimos las props de nuestro componente, cuando le damos un valor a una prop
+  por defecto, le decimos a Svelte que esta prop sera opcional. */
   export let guitar
   export let cart = []
 
   let isCartOpen = false
 
+  /* La función createEventDispatcher nos regresa una función mediante la cual podemos
+  crear eventos personalizados. */
   const dispatch = createEventDispatcher()
 
+  /* Creamos una transición crossfade para los elementos de nuestro DOM. */
   const [send, receive] = crossfade({
     fallback: (node, params) => {
       const style = getComputedStyle(node)
@@ -29,12 +34,15 @@
   })
 </script>
 
+<!-- Cuando nuestros componentes tienen un <slot />, actúa como el children de React
+y le podemos pasar componentes hijos que serán renderizados dentro de el. -->
 <BackgroundHeader>
   <nav>
     <figure>
       <img src='/img/logo.svg' alt='Logo of the app' class='logo' />
     </figure>
 
+    <!-- Mediante la directiva on: podemos definir eventos en los elementos. -->
     <button class='cart-button' on:click={() => (isCartOpen = !isCartOpen)}>
       <img src='/img/carrito.png' alt='Logo of the app' class='img-btn' />
     </button>
@@ -42,18 +50,21 @@
 
   {#if guitar}
     <section>
-      <h1 in:receive={{ key: guitar.id }} out:send={{ key: guitar.id }}>
+      <!-- Usamos las transiciones que definimos anteriormente. -->
+      <h1 in:receive='{{ key: guitar.id }}' out:send='{{ key: guitar.id }}'>
         Modelo {guitar.model}
       </h1>
 
-      <p class='guitar-desc' in:receive={{ key: guitar.id }} out:send={{ key: guitar.id }}>
+      <p class='guitar-desc' in:receive='{{ key: guitar.id }}' out:send='{{ key: guitar.id }}'>
         {guitar.description}
       </p>
 
-      <p class='guitar-price' in:receive={{ key: guitar.id }} out:send={{ key: guitar.id }}>
+      <p class='guitar-price' in:receive='{{ key: guitar.id }}' out:send='{{ key: guitar.id }}'>
         ${guitar.price}
       </p>
 
+      <!-- Creamos un evento personalizado llamado add al cual le mandamos el elemento
+      guitar en los details del evento. -->
       <button class='add-to-cart' on:click={() => dispatch('add', guitar)}>
         Agregar al carrito
       </button>
@@ -70,7 +81,17 @@
     />
   {/if}
 
-  <Cart {cart} isOpen={isCartOpen} on:decrease on:increase on:remove on:clear />
+  <!-- Cuando mandamos llamar componentes y en los eventos no le pasamos un callback
+  le decimos a Svelte que estos eventos serán definidos por el componente padre, del
+  componente. -->
+  <Cart
+    {cart}
+    isOpen={isCartOpen}
+    on:decrease
+    on:increase
+    on:remove
+    on:clear
+  />
 </BackgroundHeader>
 
 <style>

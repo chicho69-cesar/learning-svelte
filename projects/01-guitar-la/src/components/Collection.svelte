@@ -9,6 +9,9 @@
 </h1>
 
 <section class='grid'>
+  <!-- En los ciclos, obtenemos el elemento, el indice y entre paréntesis podemos definir
+  una key para identificar el componente en el DOM y que Svelte pueda hacer mejoras de
+  rendimiento. -->
   {#each guitars as guitar, i (guitar.id)}
     <Guitar {guitar} on:add />
   {/each}

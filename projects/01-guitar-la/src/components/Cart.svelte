@@ -16,6 +16,9 @@
     Carrito de compras
   </h3>
 
+  <!-- La directiva each es un ciclo que nos permite iterar listas y todo tipo de objetos
+  que sean iterables, además de que podemos usar la directiva else con el para cuando
+  el elemento iterable no tiene elementos. -->
   {#each cart as { quantity, guitar }}
     <article>
       <figure>
