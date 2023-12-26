@@ -1,3 +1,3 @@
 <script lang='ts'>
-  export let emoji_unicode: string
+  export let emojiUnicode: string
 </script>
