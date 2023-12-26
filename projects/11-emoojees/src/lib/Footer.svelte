@@ -5,52 +5,38 @@
   
   <div class='flex flex-row mb-4 space-x-6'>
     <p>
-      Emoji-lovers rejoice! Our cheat sheet has got you covered with all the
-      GitHub-supported emojis you could ever want. Copy and paste to your
-      heart's content and let the good times roll 🎉😎🤙.
+      Emoji-lovers disfruten! Nuestra cheat sheet que tiene cubiertos todos los
+      emojis soportados por GitHub, cualquiera que quieras. Copia y pega los
+      emojis que te gusten y deja que los buenos tiempos fluyan 🎉😎🤙.
     </p>
     
     <p>
-      Thanks for emoji-ing around with us! Remember, when words fail, emojis
-      speak. 🎉 Don't be afraid to express yourself with a little help from our
-      searchable cheat sheet. Whether you're feeling 😍 or 🤯, we're here to
-      help. Happy coding! 👨‍💻👩‍💻
+      Gracias por emojear junto a nosotros! Recuerda, cuando las palabras fallan, los emojis
+      hablan. 🎉 No sientas pena de expresarte con una pequeña ayuda de nuestra 
+      buscable cheat sheet. Como te sientes 😍 o 🤯, estamos aquí para 
+      ayudarte. Happy coding! 👨‍💻👩‍💻
     </p>
   </div>
   
   <div class='mb-4'>
-    <h2 class='mb-1 text-lg font-semibold'>👉 Here's some 💡!</h2>
+    <h2 class='mb-1 text-lg font-semibold'>👉 Aquí hay algunas 💡!</h2>
     
     <ul class='list-disc list-inside'>
-      <li>Type at anytime to 🔍!</li>
+      <li>Escribe lo que quieras en 🔍!</li>
       
       <li>
-        The 📎 in the header will allow you to 📋 the GitHub code ➡ :paperclip:
-        or the unicode ➡ 📎.
+        El 📎 el el header te permitirá 📋 el código de GitHub ➡ :paperclip:
+        o el unicode ➡ 📎.
       </li>
       
       <li>
-        Click the 🌙/☀️ to switch the 🎨, and 🔝 to 🛫 to the 🔝 of the 📄.
+        Haz Click en 🌙/☀️ para cambiar el 🎨, y 🔝 para 🛫 al 🔝 del 📄.
       </li>
       
-      <li>Your ⚙️ are saved in the 🌐 and will be 🧐 next 🕰️ you visit.</li>
+      <li>Tus ⚙️ son guardadas en 🌐 y estarán 🧐 la siguiente 🕰️ que nos visites.</li>
     </ul>
   </div>
   
-  <h2 class='mb-1 text-lg font-semibold'>Contribute</h2>
-  
-  <div class='flex flex-row mb-6'>
-    <p>
-      🔨 We are constantly 💪 to improve our 😃 cheat sheet and make it even
-      more 👥-friendly. That's why we invite you to 🤝 with our 💻 on GitHub!
-      Whether you want to 📨 a 🐛 or suggest a 🆕 feature, your 🎁 are 💰 and
-      highly 👍. By doing a pull request, you can 🤝 your 👨‍🏫 and help us make
-      our 😃 cheatsheet the 🚀 resource for 👨‍💻 and 😃 enthusiasts. So, don't
-      hesitate to join our 🌐 and be part of the 🗣️. Together, we can make the
-      🌎 of 😃 even more 😄, accessible, and 🔥!
-    </p>
-  </div>
-
   <div class='flex flex-col justify-center gap-2 mb-8 text-center indent-0 md:flex-row text-slate-500'>
     <p>© {new Date().getFullYear()} The Emoji Megacorp.</p>
     <p>All rights enforced by PMC.</p>

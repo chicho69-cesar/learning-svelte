@@ -26,11 +26,12 @@
   <div class='relative flex flex-wrap max-w-2xl mx-auto mb-10 font-medium text-white select-none w-fit place-content-evenly'>
     {#each categories as category (category)}
       <button
-        class={
-          `w-28 px-4 py-2 h-16 mx-1 my-3 rounded-xl transition-all 
-          ${categoriesSelectedArr.includes(category)
-            ? `translate-y-[4px] bg-indigo-400 dark:bg-pink-400 `
-            : `bg-indigo-500 dark:bg-pink-500 [box-shadow:0_4px_0_0_#4f46e5] dark:[box-shadow:0_4px_0_0_#db2777]`
+        class={`
+          w-28 px-4 py-2 h-16 mx-1 my-3 rounded-xl transition-all 
+          ${
+            categoriesSelectedArr.includes(category)
+              ? `translate-y-[4px] bg-indigo-400 dark:bg-pink-400 `
+              : `bg-indigo-500 dark:bg-pink-500 [box-shadow:0_4px_0_0_#4f46e5] dark:[box-shadow:0_4px_0_0_#db2777]`
           }`
         }
         on:click={() => {
@@ -57,7 +58,7 @@
           categories = categories
         }}
       >
-        Show all
+        Ver todos
       </button>
     {:else}
       <button
@@ -68,7 +69,7 @@
           categories = categories
         }}
       >
-        Hide all
+        Ocultar todos
       </button>
     {/if}
   </div>
@@ -93,7 +94,7 @@
                 class={`text-3xl w-1/4 md:w-auto font-emoji p-4 md:p-6 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-xl`}
                 on:click={() => {
                   navigator.clipboard.writeText(`:${emoji.name}:`)
-                  addToast('Copied!', emojiMode, `:${emoji.name}:`, 2000)
+                  addToast('Copiado!', emojiMode, `:${emoji.name}:`, 2000)
                 }}
               >
                 <img class='w-10' src={emoji.fallback_url} alt={emoji.name} />
@@ -124,10 +125,10 @@
                     on:click={() => {
                       if (emojiMode === 'code') {
                         navigator.clipboard.writeText(`:${slug}:`)
-                        addToast('Copied!', emojiMode, `:${slug}:`, 2000)
+                        addToast('Copiado!', emojiMode, `:${slug}:`, 2000)
                       } else {
                         navigator.clipboard.writeText(emoji.emoji)
-                        addToast('Copied!', emojiMode, emoji.emoji, 2000)
+                        addToast('Copiado!', emojiMode, emoji.emoji, 2000)
                       }
                     }}
                   >

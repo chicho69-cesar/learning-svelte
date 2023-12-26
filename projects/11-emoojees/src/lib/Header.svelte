@@ -101,7 +101,7 @@
         id='subtitle'
         class='text-md overflow-hidden max-h-6 transition-[max-height] duration-300 ease-in-out'
       >
-        because emojis are important
+        Porque los emojis son importantes
       </p>
     </div>
   </div>
@@ -113,7 +113,7 @@
       bind:value={searchQuery}
       type='text'
       autocomplete='off'
-      placeholder='Search'
+      placeholder='Buscar...'
       aria-label='Search for emojis'
     />
     <p>🔍</p>

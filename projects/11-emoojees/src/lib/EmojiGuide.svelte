@@ -117,10 +117,10 @@
         on:click={() => {
           if (emojiMode === 'code') {
             navigator.clipboard.writeText(`${emoji.slug}`)
-            addToast('Copied!', emojiMode, `${emoji.slug}`, 2000)
+            addToast('Copiado!', emojiMode, `${emoji.slug}`, 2000)
           } else {
             navigator.clipboard.writeText(emoji.emoji)
-            addToast('Copied!', emojiMode, `${emoji.emoji}`, 2000)
+            addToast('Copiado!', emojiMode, `${emoji.emoji}`, 2000)
           }
         }}
         class='flex flex-col items-center justify-between bg-white dark:bg-slate-800 rounded-2xl shadow-md w-[130px] lg:w-[240px] h-28 my-2 mx-2 py-4 px-4 select-none space-y-2 lg:space-y-0'
@@ -129,12 +129,12 @@
           <h2 class='mt-1 mb-3 text-xs font-semibold text-center lg:text-base lg:mb-0'>
             {emoji.purpose}
           </h2>
-          
+
           <h1 class='w-16 text-5xl lg:text-4xl'>
             {emoji.emoji}
           </h1>
         </div>
-        
+
         <div class='hidden lg:block'>
           <p class='w-full text-xs text-center text-slate-500 dark:text-slate-400'>
             {emoji.description}
