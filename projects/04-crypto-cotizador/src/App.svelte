@@ -1,7 +1,8 @@
 <script>
   import './app.css'
+  
   import Form from './components/Form.svelte'
-  import Result from './components/Result.svelte';
+  import Result from './components/Result.svelte'
 
   let selectedCurrency = 'default'
   let selectedCrypto = 'default'
@@ -41,6 +42,14 @@
       Cotizador de <span class='text-indigo-600'>Criptomonedas</span>
     </h1>
 
+    <!-- Cuando hacemos un bind de una prop de un componente, lo que hacemos es que
+    al modificar el valor de las props en el componente hijo también cambia el valor
+    en el componente padre que hace el bind.
+    Cuando tenemos una prop que se llama al valor que le queremos pasar podemos simplemente
+    pasarla entre {}.
+    Hacemos un bind de eventos, esto lo que hacemos es que un cierto evento submit
+    de un form dentro del componente ejecutara la función que le mandemos al evento desde
+    el padre. -->
     <Form
       bind:currency={selectedCurrency}
       bind:crypto={selectedCrypto}

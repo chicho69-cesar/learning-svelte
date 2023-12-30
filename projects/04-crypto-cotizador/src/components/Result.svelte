@@ -4,6 +4,11 @@
   export let result
 </script>
 
+<!-- La directiva await nos ayuda a resolver promesas dentro de nuestros componentes
+asi podemos manejar varios estados de las promesas, el cual es el loading mientras se
+intento resolver la promesa con el 'await', si la promesa se resuelve exitosamente
+tenemos el que entra al 'then' y obtenemos el valor que se resolvió, si hay un error
+entra al bloque 'catch' y obtenemos el error que se haya generado. -->
 {#await result}
   <Spinner />
 {:then value}

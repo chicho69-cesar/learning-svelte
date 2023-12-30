@@ -20,7 +20,13 @@
   })
 </script>
 
-<form class='inline-block w-full px-8 py-6 my-8 bg-white rounded-lg shadow-sm' on:submit|preventDefault>
+<!-- Hacemos un bind de un evento, en este caso el evento submit del formulario,
+al hacer submit se ejecutar el evento que se defina en el componente que mande llamar
+a este componente y a la vez se ejecutar el modificador de eventos preventDefault. -->
+<form
+  class='inline-block w-full px-8 py-6 my-8 bg-white rounded-lg shadow-sm'
+  on:submit|preventDefault
+>
   {#if showAlert}
     <p class='inline-block w-full px-4 py-2 mb-4 font-bold text-center text-white bg-red-500'>
       Debes seleccionar todos los campos
@@ -31,7 +37,13 @@
     <label class='flex flex-col gap-1 mb-4'>
       <span class='text-sm font-bold'>Moneda:</span>
 
-      <select class='w-full px-4 py-2 font-medium bg-gray-200 rounded outline-none' bind:value={currency}>
+      <!-- Hacemos un bind de la propiedad value con la variable currency, en este caso
+      cada que cambia el valor del select, este nuevo valor sera asignado a la variable 
+      currency. -->
+      <select
+        class='w-full px-4 py-2 font-medium bg-gray-200 rounded outline-none'
+        bind:value={currency}
+      >
         <option value='default'>Seleccione</option>
         
         {#each currencies as currency, i (currency.id)}
@@ -47,7 +59,10 @@
     <label class='flex flex-col gap-1 mb-4'>
       <span class='text-sm font-bold'>Criptomoneda:</span>
 
-      <select class='w-full px-4 py-2 font-medium bg-gray-200 rounded outline-none' bind:value={crypto}>
+      <select
+        class='w-full px-4 py-2 font-medium bg-gray-200 rounded outline-none'
+        bind:value={crypto}
+      >
         <option value='default'>Seleccione</option>
 
         {#each cryptos as crypto, i (crypto.id)}
