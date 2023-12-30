@@ -1,8 +1,12 @@
 <script>
   import { onMount } from 'svelte'
   import { currencies } from '../data/currencies'
-  
+
   let cryptos = []
+
+  export let currency
+  export let crypto
+  export let showAlert
 
   onMount(() => {
     fetch('https://min-api.cryptocompare.com/data/top/mktcapfull?limit=20&tsym=USD')
@@ -16,12 +20,18 @@
   })
 </script>
 
-<form class='inline-block w-full px-8 py-6 my-8 bg-white rounded-lg shadow-sm'>
+<form class='inline-block w-full px-8 py-6 my-8 bg-white rounded-lg shadow-sm' on:submit|preventDefault>
+  {#if showAlert}
+    <p class='inline-block w-full px-4 py-2 mb-4 font-bold text-center text-white bg-red-500'>
+      Debes seleccionar todos los campos
+    </p>
+  {/if}
+  
   <div class='w-full'>
     <label class='flex flex-col gap-1 mb-4'>
       <span class='text-sm font-bold'>Moneda:</span>
 
-      <select class='w-full px-4 py-2 font-medium bg-gray-200 rounded outline-none'>
+      <select class='w-full px-4 py-2 font-medium bg-gray-200 rounded outline-none' bind:value={currency}>
         <option value='default'>Seleccione</option>
         
         {#each currencies as currency, i (currency.id)}
@@ -37,7 +47,7 @@
     <label class='flex flex-col gap-1 mb-4'>
       <span class='text-sm font-bold'>Criptomoneda:</span>
 
-      <select class='w-full px-4 py-2 font-medium bg-gray-200 rounded outline-none'>
+      <select class='w-full px-4 py-2 font-medium bg-gray-200 rounded outline-none' bind:value={crypto}>
         <option value='default'>Seleccione</option>
 
         {#each cryptos as crypto, i (crypto.id)}
