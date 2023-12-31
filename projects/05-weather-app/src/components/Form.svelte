@@ -1,9 +1,16 @@
 <script>
+  import { searchWeather } from '../store/weather'
+
   let city = ''
   let country = ''
+
+  const handleSubmit = async () => {
+    if (city === '' || country === '') return
+    await searchWeather(city, country)
+  }
 </script>
 
-<form class='w-1/2'>
+<form class='w-1/2' on:submit|preventDefault={handleSubmit}>
   <div class='w-full mb-4'>
     <label class='flex flex-col w-full gap-1'>
       <span class='text-sm font-bold text-white'>Ciudad</span>
@@ -16,7 +23,7 @@
       />
     </label>
   </div>
-  
+
   <div class='w-full mb-4'>
     <label class='flex flex-col w-full gap-1'>
       <span class='text-sm font-bold text-white'>País</span>

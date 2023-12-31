@@ -1,7 +1,8 @@
 <script>
   import './app.css'
   import Container from './components/Container.svelte'
-  import Form from './components/Form.svelte';
+  import Form from './components/Form.svelte'
+  import Result from './components/Result.svelte'
 </script>
 
 <Container>
@@ -11,5 +12,6 @@
 
   <div class='flex items-start justify-between w-full gap-8 my-6'>
     <Form />
+    <Result />
   </div>
 </Container>
