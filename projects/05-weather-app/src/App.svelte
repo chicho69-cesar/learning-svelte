@@ -1,9 +1,15 @@
 <script>
   import './app.css'
+  import Container from './components/Container.svelte'
+  import Form from './components/Form.svelte';
 </script>
 
-<main>
-  <h1 class='text-5xl font-black text-center'>
-    Hola Mundo
+<Container>
+  <h1 class='pt-6 text-4xl font-black text-center text-white'>
+    Buscador de clima
   </h1>
-</main>
+
+  <div class='flex items-start justify-between w-full gap-8 my-6'>
+    <Form />
+  </div>
+</Container>
