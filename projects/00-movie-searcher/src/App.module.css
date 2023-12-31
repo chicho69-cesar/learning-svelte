@@ -1,0 +1,10 @@
+.main {
+  width: 70%;
+  margin: 2rem auto;
+}
+
+.loading {
+  font-size: 1.25rem;
+  text-align: center;
+  color: white;
+}

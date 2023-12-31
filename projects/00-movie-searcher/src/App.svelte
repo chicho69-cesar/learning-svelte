@@ -1,6 +1,7 @@
 <script>
 	import Search from './lib/Search.svelte'
 	import Movies from './lib/Movies.svelte'
+  import styles from './App.module.css'
 
   const API_KEY = import.meta.env.VITE_API_KEY
   const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`
@@ -25,7 +26,7 @@
     const { Response, Search } = await json
 
 		if (Response === 'False') return []
-	
+
     return Search.map(({ Title, Year, Poster }) => ({
 			title: Title,
 			year: Year,
@@ -38,12 +39,21 @@
   }
 </script>
 
-<main>
+<main class={styles.main}>
   <Search onSubmit={handleSubmit} />
 
   {#await promise}
-    <p>Cargando...</p>
+    <p class={styles.loading}>
+      Cargando...
+    </p>
   {:then movies}
     <Movies movies={movies} />
   {/await}
 </main>
+
+<style>
+  :global(body) {
+    min-height: 100vh;
+    background: radial-gradient(#25292e, #101010);
+  }
+</style>

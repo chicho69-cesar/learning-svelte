@@ -1,15 +1,22 @@
 <script>
 	import Movie from './Movie.svelte'
+  import styles from './Movies.module.css'
 
   export let movies
 </script>
 
 {#if movies?.length === 0}
-  <p>No hay resultados</p>
+  <p class={styles.text}>
+    No hay resultados
+  </p>
 {:else if movies?.length}
-  {#each movies as movie}
-    <Movie {...movie} />
-  {/each}
+  <section class={styles.grid}>
+    {#each movies as movie}
+      <Movie {...movie} />
+    {/each}
+  </section>
 {:else}
-  <p>Usa el formulario para buscar una película</p>
+  <p class={styles.text}>
+    Usa el formulario para buscar una película
+  </p>
 {/if}

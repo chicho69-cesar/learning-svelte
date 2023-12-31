@@ -1,0 +1,51 @@
+.form {
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.label {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.25rem;
+}
+
+.span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+}
+
+.input {
+  display: inline-block;
+  width: 250px;
+  padding: 0.75rem 1rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  background: #13c503;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  cursor: pointer;
+  background: #11ac02;
+  transform: scale(0.95);
+}
