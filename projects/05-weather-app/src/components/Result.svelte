@@ -5,11 +5,15 @@
   let result = { weather: null, error: null }
   const KELVIN = 273.15
 
+  /* Nos suscribimos de forma manual a la store y obtenemos el valor del estado global. */
   weather.subscribe((value) => {
     result = value
   })
 </script>
 
+<!-- Cuando usamos una store poniendo al inicio el símbolo $ quiere decir que es una 
+autosuscripción, es decir, que nos vamos a suscribir al valor del estado sin la necesidad
+de usar el método suscribe. -->
 {#if $loadingWeather}
   <Loading />
 {:else if result.weather == null && result.error == null}
