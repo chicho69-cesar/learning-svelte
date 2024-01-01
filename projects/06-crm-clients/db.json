@@ -17,7 +17,7 @@
       "phone": "123-123-4321",
       "business": "VITE",
       "role": "Developer",
-      "state": false,
+      "state": true,
       "id": 2
     }
   ]
