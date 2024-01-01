@@ -1,12 +1,12 @@
 <script lang='ts'>
   import './app.css'
   import { Router, Route } from 'svelte-routing'
-
+  
+  import Header from './components/ui/Header.svelte'
   import Home from './routes/Home.svelte'
   import AddClient from './routes/AddClient.svelte'
   import EditClient from './routes/EditClient.svelte'
   import Page404 from './routes/404.svelte'
-  import Header from './components/ui/Header.svelte'
 
   export let url: string = ''
 </script>
@@ -25,7 +25,7 @@
 <style>
   /* width */
   :global(::-webkit-scrollbar) {
-    width: 10px;
+    width: 5px;
   }
 
   /* Track */

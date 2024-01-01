@@ -5,7 +5,7 @@
 
   export let client: Client
 
-  $: clientName = client.name + client.lastName
+  $: clientName = client.name + ' ' + client.lastName
   $: clientState = client.state
 
   const dispatch = createEventDispatcher()

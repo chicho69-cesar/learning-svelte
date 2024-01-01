@@ -17,8 +17,18 @@
       "phone": "123-123-4321",
       "business": "VITE",
       "role": "Developer",
-      "state": true,
+      "state": false,
       "id": 2
+    },
+    {
+      "id": 49237,
+      "state": true,
+      "name": "Cesar",
+      "lastName": "Villalobos Olmos",
+      "email": "cesarvillalobosolmos.01@gmail.com",
+      "phone": "3491099207",
+      "business": "Softech",
+      "role": "Developer"
     }
   ]
 }
