@@ -5,7 +5,7 @@ import type { Drinks } from '../types/drinks'
 import type { Drink } from '../types/drink'
 import { getCategories, searchRecipe, searchRecipes } from '../services/drinks.service'
 
-interface DrinkStore {
+export interface DrinkStore {
   categories: Category
   search: {
     name: string,
@@ -25,6 +25,10 @@ function createDrinksStore() {
     recipes: { drinks: [] },
     recipe: { drinks: [] }
   })
+
+  const setSearch = (name: string, category: string) => {
+    update((state) => ({ ...state, search: { name, category } }))
+  }
 
   const setCategories = async () => {
     const categories = await getCategories()
@@ -53,6 +57,7 @@ function createDrinksStore() {
 
   return {
     subscribe,
+    setSearch,
     setCategories,
     getRecipes,
     selectDrink

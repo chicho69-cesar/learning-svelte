@@ -2,7 +2,6 @@
   import './app.css'
   import { Router, Route } from 'svelte-routing'
 
-  import Header from './components/Header.svelte'
   import Modal from './components/Modal.svelte'
   import Notification from './components/Notification.svelte'
   import Home from './routes/Home.svelte'
@@ -13,19 +12,15 @@
 
 <Router {url}>
   <div>
-    <Header />
+    <Route
+      path='/'
+      component={Home}
+    />
 
-    <main class="container mx-auto mt-10">
-      <Route
-        path='/'
-        component={Home}
-      />
-
-      <Route
-        path='/favorites'
-        component={Favorites}
-      />
-    </main>
+    <Route
+      path='/favorites'
+      component={Favorites}
+    />
 
     <Modal />
     <Notification />
