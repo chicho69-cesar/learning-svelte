@@ -87,7 +87,7 @@
                 <Client
                   {client}
                   on:update-state={({ detail }) => handleChangeState(detail.id, detail.state)}
-                  on:delete-cliente={({ detail }) => handleDelete(detail)}
+                  on:delete-client={({ detail }) => handleDelete(detail)}
                 />
               {/each}
             </tbody>

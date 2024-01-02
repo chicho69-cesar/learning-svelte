@@ -11,13 +11,21 @@
   export let url: string = ''
 </script>
 
+<!-- Creamos un router de svelte routing teniendo como base la url / -->
 <Router {url}>
+  <!-- Dentro de nuestro router antes de definir las rutas podemos crear el Layout
+  para cada una de las paginas. -->
   <Header />
 
   <main class='max-w-6xl mx-auto mt-10'>
+    <!-- Definimos la ruta que sera renderizada en la ruta /, en este caso el componente
+    Home. -->
     <Route path='/' component={Home} />
     <Route path='/add-client' component={AddClient} />
+    <!-- Creamos una ruta dinámica, donde tendremos un param llamado id, es por esto
+    que debemos definir los params para obtenerlos como props en al ruta. -->
     <Route path='/edit-client/:id' component={EditClient} let:params />
+    <!-- Creamos una ruta para los errores 404. -->
     <Route path='*' component={Page404} />
   </main>
 </Router>

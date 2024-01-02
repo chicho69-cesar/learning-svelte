@@ -41,7 +41,7 @@
 
     <button
       class='text-red-600 hover:text-red-500'
-      on:click={() => dispatch('delete-cliente', client.id)}
+      on:click={() => dispatch('delete-client', client.id)}
     >
       Eliminar
     </button>

@@ -8,6 +8,7 @@
   import { getClient, updateClient } from '../services/clients'
   import type { Client } from '../types/clients'
 
+  /* Aquí nuestra prop id sera la que obtengamos de los params. */
   export let id: string
   let client: Client
 

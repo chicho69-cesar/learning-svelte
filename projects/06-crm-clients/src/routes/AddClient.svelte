@@ -25,6 +25,8 @@
       role
     })
       .then((response) => {
+        /* Usamos la función navigate de svelte routing para hacer una navegación
+        desde el script. */
         navigate('/', { replace: true })
       })
       .catch((error) => console.log(error))
