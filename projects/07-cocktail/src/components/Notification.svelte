@@ -1,7 +1,7 @@
 <script lang='ts'>
   import { slide } from 'svelte/transition'
-
   import { IconCircleCheck, IconCircleX, IconX } from '@tabler/icons-svelte'
+  
   import { notificationStore } from '../stores/notifications.store'
 </script>
 

@@ -1,5 +1,7 @@
 <script lang='ts'>
+  import { onDestroy } from 'svelte'
   import { Dialog, DialogTitle, TransitionChild, Transition } from '@rgossiaux/svelte-headlessui'
+  
   import { modalStore } from '../stores/modal.store'
   import { drinksStore } from '../stores/drinks.store'
   import { favoritesStore } from '../stores/favorites.store'
@@ -8,11 +10,14 @@
   let recipe: DrinkElement | null = null
   let noOfIngredients = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 
-  drinksStore.subscribe((value) => {
+  const unsubscribe = drinksStore.subscribe((value) => {
     recipe = value.recipe.drinks[0]
   })
+
+  onDestroy(() => unsubscribe())
 </script>
 
+<!-- Usamos los componentes de Headless UI Svelte. -->
 <Transition show={$modalStore.isOpen}>
   <Dialog as='div' class='relative z-10' on:close={() => modalStore.closeModal()}>
     <TransitionChild

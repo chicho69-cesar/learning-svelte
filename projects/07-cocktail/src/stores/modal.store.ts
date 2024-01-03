@@ -8,7 +8,7 @@ interface ModalStore {
 }
 
 function createModalStore() {
-  const { subscribe, update } = writable<ModalStore>({
+  const { subscribe, update, set } = writable<ModalStore>({
     isOpen: false,
     text: ''
   })
@@ -22,7 +22,9 @@ function createModalStore() {
   }
 
   const closeModal = () => {
-    update(() => ({ isOpen: false, text: '' }))
+    /* Utilizamos el método set el cual nos permite setear todo el estado, sin realizar
+    modificaciones, sino que añadiendo un valor totalmente nuevo. */
+    set(({ isOpen: false, text: '' }))
   }
 
   return {

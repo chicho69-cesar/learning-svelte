@@ -10,6 +10,9 @@
   <div>
     <h1 class='text-6xl font-extrabold'>Recetas</h1>
 
+    <!-- En svelte cuando usamos $ antes de una store, quiere decir que es una 
+    autosuscripción, es decir, nos suscribimos al valor de la store sin la necesidad
+    de usar el método suscribe. -->
     {#if $thereIsRecipes}
       <div class='grid grid-cols-1 gap-2 my-10 md:grid-cols-2 lg:grid-cols-3'>
         {#each $drinksStore.recipes.drinks as drink, i (drink.idDrink)}

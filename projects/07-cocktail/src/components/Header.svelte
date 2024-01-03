@@ -1,13 +1,16 @@
 <script lang='ts'>
   import { onDestroy, onMount } from 'svelte'
   import { Link } from 'svelte-routing'
+  
   import { drinksStore, type DrinkStore } from '../stores/drinks.store'
-  import { notificationStore } from '../stores/notifications.store';
+  import { notificationStore } from '../stores/notifications.store'
 
   let store: DrinkStore | null = null
   let name = ''
   let category = ''
 
+  /* Cuando nos subscribimos manualmente a una store en svelte esta suscripción nos
+  regresa una función para desuscribirnos de la store. */
   const unsubscribe = drinksStore.subscribe((value) => {
     store = value
   })
@@ -19,10 +22,13 @@
     drinksStore.setCategories()
   })
 
+  /* Es una excelente practica que cada que se desmonte un componente de Svelte se
+  limpien las suscripciones realizadas a las stores. */
   onDestroy(() => unsubscribe())
 
   const handleSubmit = () => {
     if (store != null && Object.values(store.search).includes('')) {
+      /* Utilizamos uno de los métodos definidos para manipular la store. */
       notificationStore.show('Todos los campos son obligatorios', true)
       return
     }
@@ -32,6 +38,9 @@
 </script>
 
 <div>
+  <!-- En svelte si queremos agregar una clase en base al valor de una variable booleana
+  podemos simplemente escribir class:variable y se agregara la clase con el mismo nombre
+  de la variable cuando esta sea true y se quitara cuando sea false. -->
   <header class:isHomePage class='bg-slate-800'>
     <div class='container px-5 py-16 mx-auto'>
       <div class='flex items-center justify-between'>

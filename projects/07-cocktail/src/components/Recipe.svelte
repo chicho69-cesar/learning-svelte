@@ -20,6 +20,7 @@
       {recipe.strDrink}
     </h2>
 
+    <!-- Usamos un método definido en la store para manipular su valor. -->
     <button
       type='button'
       on:click={() => drinksStore.selectDrink(recipe.idDrink ?? '')}
