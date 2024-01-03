@@ -1,6 +1,7 @@
 import { writable, derived } from 'svelte/store'
 import type { DrinkElement } from '../types/drink'
 import { notificationStore } from './notifications.store'
+import { modalStore } from './modal.store'
 
 interface FavoritesStore {
   favorites: DrinkElement[]
@@ -19,7 +20,8 @@ function createFavoritesStore() {
 
   const existsFavorite = (idDrink: string) => {
     const localStorageFavorites = getFavoritesFromLocalStorage()
-    return localStorageFavorites.some((favorite) => favorite.idDrink !== idDrink)
+    const isInFavorites = localStorageFavorites.some((favorite) => favorite.idDrink === idDrink)
+    return isInFavorites
   }
 
   const deleteFavorite = (idDrink: string) => {
@@ -48,6 +50,8 @@ function createFavoritesStore() {
     } else {
       addToFavorites(drink)
     }
+
+    modalStore.closeModal()
   }
 
   return {
