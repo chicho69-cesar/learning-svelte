@@ -22,6 +22,8 @@
     "vite": "5.0.8"
   },
   "dependencies": {
+    "@rgossiaux/svelte-headlessui": "2.0.0",
+    "@tabler/icons-svelte": "2.45.0",
     "axios": "1.6.3",
     "svelte-routing": "^2.11.0"
   }
