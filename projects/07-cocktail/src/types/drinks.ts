@@ -3,7 +3,8 @@ export interface Drinks {
 }
 
 export interface DrinkElement {
-  strDrink:      string
-  strDrinkThumb: string
-  idDrink:       string
+  strInstructions?: any
+  strDrink:         string
+  strDrinkThumb:    string
+  idDrink:          string
 }

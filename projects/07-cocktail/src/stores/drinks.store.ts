@@ -1,9 +1,10 @@
 import { writable, derived } from 'svelte/store'
 
 import type { Category } from '../types/categories'
-import type { Drinks } from '../types/drinks'
+import type { DrinkElement, Drinks } from '../types/drinks'
 import type { Drink } from '../types/drink'
 import { getCategories, searchRecipe, searchRecipes } from '../services/drinks.service'
+import { modalStore } from './modal.store'
 
 export interface DrinkStore {
   categories: Category
@@ -52,7 +53,7 @@ function createDrinksStore() {
   const selectDrink = async (id: string) => {
     const recipe = await searchRecipe(id)
     update((state) => ({ ...state, recipe }))
-    // TODO: Open Modal
+    modalStore.clickModal(recipe.drinks[0])
   }
 
   return {

@@ -1,3 +1,7 @@
 export interface Drink {
-  drinks: { [key: string]: null | string }[]
+  drinks: DrinkElement[]
+}
+
+export interface DrinkElement {
+  [key: string]: null | string 
 }

@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store'
-import type { DrinkElement } from '../types/drinks'
+import type { DrinkElement } from '../types/drink'
 import { favoritesStore } from './favorites.store'
 
 interface ModalStore {
@@ -14,16 +14,21 @@ function createModalStore() {
   })
 
   const clickModal = (drink: DrinkElement) => {
-    const text = favoritesStore.existsFavorite(drink.idDrink)
+    const text = favoritesStore.existsFavorite(drink.idDrink!)
       ? 'Eliminar de favoritos'
       : 'Agregar a favoritos'
 
     update((state) => ({ isOpen: !state.isOpen, text }))
   }
 
+  const closeModal = () => {
+    update(() => ({ isOpen: false, text: '' }))
+  }
+
   return {
     subscribe,
-    clickModal
+    clickModal,
+    closeModal
   }
 }
 

@@ -1,5 +1,5 @@
 import { writable, derived } from 'svelte/store'
-import type { DrinkElement } from '../types/drinks'
+import type { DrinkElement } from '../types/drink'
 import { notificationStore } from './notifications.store'
 
 interface FavoritesStore {
@@ -43,8 +43,8 @@ function createFavoritesStore() {
   }
 
   const handleClickFavorite = (drink: DrinkElement) => {
-    if (existsFavorite(drink.idDrink)) {
-      deleteFavorite(drink.idDrink)
+    if (existsFavorite(drink.idDrink!)) {
+      deleteFavorite(drink.idDrink!)
     } else {
       addToFavorites(drink)
     }
@@ -58,8 +58,14 @@ function createFavoritesStore() {
 }
 
 function getFavoritesFromLocalStorage() {
-  const favorites: DrinkElement[] = JSON.parse(localStorage.getItem('favorites') ?? '') ?? []
-  return favorites
+  const localStorageFavorites = localStorage.getItem('favorites')
+
+  if (localStorageFavorites != null) {
+    const favorites: DrinkElement[] = JSON.parse(localStorageFavorites)
+    return favorites
+  }
+
+  return []
 }
 
 export const favoritesStore = createFavoritesStore()
