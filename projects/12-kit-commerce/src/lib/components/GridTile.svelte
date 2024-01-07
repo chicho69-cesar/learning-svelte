@@ -2,7 +2,7 @@
 	import type { Product } from '$lib/types/product'
   import cartItemsStore from '$lib/store/cart'
 
-  export let product: Product = {
+  export let product: Product | Omit<Product, 'quantity'> = {
 		name: 'No product provided',
 		src: 'https://img.icons8.com/ios/500/no-image.png',
 		price: '$0',
@@ -11,7 +11,7 @@
 
   const addToCart = () => {
     cartItemsStore.update((currentData) => {
-      return [product, ...currentData]
+      return [product as Product, ...currentData]
     })
   }
 </script>

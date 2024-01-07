@@ -4,3 +4,5 @@ export interface Product {
   price: string
   quantity: number
 }
+
+export type ProductWithDescription = Product & { description: string }
