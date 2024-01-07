@@ -41,7 +41,7 @@
 
 <div
 	transition:fade
-	class='absolute inset-0 z-50 flex justify-end w-full max-h-screen overflow-hidden bg-black/50'
+	class='absolute inset-0 z-50 flex justify-end w-full max-h-screen bg-black/50'
 >
 	<div class='z-50 w-full p-6 bg-black lg:w-1/3 md:w-1/2'>
 		<div class='flex items-center justify-between w-full mb-6'>
@@ -92,7 +92,7 @@
 			</div>
 		{/if}
 
-		<div class='overflow-y-auto' style='height: 60%;'>
+		<div class='overflow-y-auto'>
 			{#each cartItems as item, i (item.name)}
 				<div animate:flip>
 					<div class='flex w-full mb-2'>
@@ -121,7 +121,7 @@
 
 							<button
 								on:click={() => {
-									removeOne(i);
+									removeOne(i)
 								}}
 								class='flex items-center justify-center w-8 h-8 ml-auto border-l border-white/40 bg-white/0 hover:bg-white/10'
 							>
@@ -130,7 +130,7 @@
 
 							<button
 								on:click={() => {
-									addOne(i);
+									addOne(i)
 								}}
 								class='flex items-center justify-center w-8 h-8 border-l border-white/40 bg-white/0 hover:bg-white/10'
 							>

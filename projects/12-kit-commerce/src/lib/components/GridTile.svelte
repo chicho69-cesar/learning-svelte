@@ -16,11 +16,11 @@
   }
 </script>
 
-<div class='h-[50vh] w-full bg-indigo-600 overflow-hidden'>
+<div class='relative h-[50vh] w-full bg-indigo-600 overflow-hidden mb-4'>
 	<a
 		href={`/product/${product.name.toLowerCase()}`}
 		data-sveltekit-prefetch
-		class='relative flex items-center justify-center w-full h-full'
+		class='flex items-center justify-center w-full h-full'
 	>
 		<img
 			src={product.src}
@@ -37,11 +37,11 @@
         {product.price}
       </p>
 		</div>
-
-		<div class='absolute bottom-0 w-full p-6'>
-			<button on:click={addToCart} class='w-full p-3 bg-black'>
-        {' '}Add To Cart{' '}
-      </button>
-		</div>
 	</a>
+
+	<div class='absolute bottom-0 w-full p-6'>
+		<button on:click={addToCart} class='w-full p-3 bg-black'>
+			{' '}Add To Cart{' '}
+		</button>
+	</div>
 </div>
