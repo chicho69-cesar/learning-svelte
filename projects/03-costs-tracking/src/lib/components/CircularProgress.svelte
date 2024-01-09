@@ -7,7 +7,10 @@
 	$: background = `radial-gradient(white 50%, transparent 51%),
     conic-gradient(transparent 0deg ${angle}deg, gainsboro ${angle}deg 360deg),
     conic-gradient(#3b82f6 0deg, #3b82f6);`
-	$: cssVarStyles = `--background:${background}`
+	
+  /* Con la variable cssVarStyles podemos definir variables que después podemos 
+  usar en el bloque de estilos css. */
+  $: cssVarStyles = `--background:${background}`
 </script>
 
 <div id='progress-circle' style='{cssVarStyles}'>
@@ -18,6 +21,7 @@
 
 <style>
   #progress-circle {
+    /* Usamos una variable definida en el scope de script */
     background: var(--background);
     border-radius: 50%;
     width: 250px;

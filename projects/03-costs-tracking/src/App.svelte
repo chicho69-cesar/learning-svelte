@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from 'svelte'
+  
   import Budget from './lib/components/Budget.svelte'
   import BudgetControl from './lib/components/BudgetControl.svelte'
   import Modal from './lib/components/Modal.svelte'
@@ -7,7 +9,6 @@
   import { generateId } from './lib/helpers/generate-id'
 
   import newSpentIcon from './assets/img/nuevo-gasto.svg'
-  import { onMount } from 'svelte'
 
   let budget = 0
   let available = 0
@@ -125,6 +126,8 @@
   }
 
   const deleteSpent = () => {
+    /* Usamos la API del navegador confirm para que el usuario confirme que desea
+    eliminar el gasto. */
     if (confirm('¿Está seguro que desea eliminar el gasto?')) {
       spentList = spentList.filter((value) => value.id !== currentSpent.id)
       closeModal()
@@ -189,6 +192,13 @@
       </div>
 
       {#if modal.show}
+        <!-- Usamos los eventos on: cuando definimos un evento usando un dispatcher
+        de eventos.
+        Podemos ejecutar funciones que pasamos como props al componente.
+        Podemos pasar variables o props que en el componente sera de solo lectura,
+        es decir, que no van a cambiar su valor dentro del componente.
+        También podemos usar bind para props que van a cambiar su valor dentro del 
+        componente. -->
         <Modal
           on:close-modal={() => closeModal()}
           on:delete-spent={() => deleteSpent()}
