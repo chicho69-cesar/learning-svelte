@@ -1,8 +1,6 @@
-import './app.css'
 import App from './App.svelte'
 
-const app = new App({
-  target: document.getElementById('app'),
-})
+const target = document.getElementById('app')!
+const app = new App({ target })
 
 export default app
