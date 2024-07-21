@@ -8,7 +8,7 @@
 
 <main>
   <p>
-    No funcionan los layouts anidados, mierda si funcionan
+    Nested Layout
   </p>
 
   <slot />
