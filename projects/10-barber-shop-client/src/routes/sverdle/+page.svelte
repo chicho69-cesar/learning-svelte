@@ -1,4 +1,6 @@
-<script lang="ts">
+<script lang='ts'>
+	import './styles.css';
+
 	import { confetti } from '@neoconfetti/svelte';
 	import { enhance } from '$app/forms';
 	import type { PageData, ActionData } from './$types';
@@ -80,7 +82,7 @@
 		if (event.key === 'Enter' && !submittable) return;
 
 		document
-			.querySelector(`[data-key="${event.key}" i]`)
+			.querySelector(`[data-key='${event.key}' i]`)
 			?.dispatchEvent(new MouseEvent('click', { cancelable: true }));
 	}
 </script>
@@ -89,14 +91,14 @@
 
 <svelte:head>
 	<title>Sverdle</title>
-	<meta name="description" content="A Wordle clone written in SvelteKit" />
+	<meta name='description' content='A Wordle clone written in SvelteKit' />
 </svelte:head>
 
-<h1 class="visually-hidden">Sverdle</h1>
+<h1 class='visually-hidden'>Sverdle</h1>
 
 <form
-	method="POST"
-	action="?/enter"
+	method='POST'
+	action='?/enter'
 	use:enhance={() => {
 		// prevent default callback from resetting the form
 		return ({ update }) => {
@@ -104,13 +106,13 @@
 		};
 	}}
 >
-	<a class="how-to-play" href="/sverdle/how-to-play">How to play</a>
+	<a class='how-to-play' href='/sverdle/how-to-play'>How to play</a>
 
-	<div class="grid" class:playing={!won} class:bad-guess={form?.badGuess}>
+	<div class='grid' class:playing={!won} class:bad-guess={form?.badGuess}>
 		{#each Array.from(Array(6).keys()) as row (row)}
 			{@const current = row === i}
-			<h2 class="visually-hidden">Row {row + 1}</h2>
-			<div class="row" class:current>
+			<h2 class='visually-hidden'>Row {row + 1}</h2>
+			<div class='row' class:current>
 				{#each Array.from(Array(5).keys()) as column (column)}
 					{@const guess = current ? currentGuess : data.guesses[row]}
 					{@const answer = data.answers[row]?.[column]}
@@ -119,9 +121,9 @@
 					{@const exact = answer === 'x'}
 					{@const close = answer === 'c'}
 					{@const missing = answer === '_'}
-					<div class="letter" class:exact class:close class:missing class:selected>
+					<div class='letter' class:exact class:close class:missing class:selected>
 						{value}
-						<span class="visually-hidden">
+						<span class='visually-hidden'>
 							{#if exact}
 								(correct)
 							{:else if close}
@@ -132,47 +134,47 @@
 								empty
 							{/if}
 						</span>
-						<input name="guess" disabled={!current} type="hidden" {value} />
+						<input name='guess' disabled={!current} type='hidden' {value} />
 					</div>
 				{/each}
 			</div>
 		{/each}
 	</div>
 
-	<div class="controls">
+	<div class='controls'>
 		{#if won || data.answers.length >= 6}
 			{#if !won && data.answer}
-				<p>the answer was "{data.answer}"</p>
+				<p>the answer was '{data.answer}'</p>
 			{/if}
-			<button data-key="enter" class="restart selected" formaction="?/restart">
+			<button data-key='enter' class='restart selected' formaction='?/restart'>
 				{won ? 'you won :)' : `game over :(`} play again?
 			</button>
 		{:else}
-			<div class="keyboard">
-				<button data-key="enter" class:selected={submittable} disabled={!submittable}>enter</button>
+			<div class='keyboard'>
+				<button data-key='enter' class:selected={submittable} disabled={!submittable}>enter</button>
 
 				<button
 					on:click|preventDefault={update}
-					data-key="backspace"
-					formaction="?/update"
-					name="key"
-					value="backspace"
+					data-key='backspace'
+					formaction='?/update'
+					name='key'
+					value='backspace'
 				>
 					back
 				</button>
 
 				{#each ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'] as row}
-					<div class="row">
+					<div class='row'>
 						{#each row as letter}
 							<button
 								on:click|preventDefault={update}
 								data-key={letter}
 								class={classnames[letter]}
 								disabled={submittable}
-								formaction="?/update"
-								name="key"
+								formaction='?/update'
+								name='key'
 								value={letter}
-								aria-label="{letter} {description[letter] || ''}"
+								aria-label='{letter} {description[letter] || ''}'
 							>
 								{letter}
 							</button>
@@ -186,7 +188,7 @@
 
 {#if won}
 	<div
-		style="position: absolute; left: 50%; top: 30%"
+		style='position: absolute; left: 50%; top: 30%'
 		use:confetti={{
 			particleCount: $reduced_motion ? 0 : undefined,
 			force: 0.7,
